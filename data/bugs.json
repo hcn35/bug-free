@@ -1,0 +1,29 @@
+[
+  {
+    "problem": "req.body is undefined",
+    "section": "Section 8: Using MongoDB with Mongoose",
+    "lecture": "89. Another Way of Creating Documents",
+    "solutions": [
+      {
+        "description": "Install body-parser",
+        "links": [
+          "https://stackoverflow.com/questions/69397120/how-to-make-a-get-request-mongodb-express",
+          "https://reactgo.com/express-req-body-undefined/"
+        ]
+      }
+    ]
+  },
+  {
+    "problem": "document.find(id) doesn't work",
+    "section": "Section 8: Using MongoDB with Mongoose",
+    "lecture": "90. Reading Documents",
+    "solutions": [
+      {
+        "description": "Pass an object with _id as key and id as value",
+        "links": [
+          "https://www.mongodb.com/docs/manual/reference/method/db.collection.find/#:~:text=To%20find%20documents%20that%20match,operators%20to%20specify%20the%20criteria.&text=For%20a%20list%20of%20the%20query%20operators%2C%20see%20Query%20Selectors."
+        ]
+      }
+    ]
+  }
+]
