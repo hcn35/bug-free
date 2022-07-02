@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const ticketSchema = new mongoose.Schema({
   title: {
@@ -6,6 +7,7 @@ const ticketSchema = new mongoose.Schema({
     required: [true, "A ticket must have a name"],
     unique: true,
   },
+  slug: String,
   description: {
     type: String,
     required: [true, "A ticket must have a description"],
@@ -20,6 +22,12 @@ const ticketSchema = new mongoose.Schema({
   time_ended: {
     type: Date,
   },
+});
+
+// DOCUMENT MIDDLEWARE
+ticketSchema.pre("save", function (next) {
+  this.slug = slugify(this.title, { lower: true });
+  next();
 });
 
 const Ticket = mongoose.model("Ticket", ticketSchema);
