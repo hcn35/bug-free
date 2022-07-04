@@ -21,6 +21,9 @@ const ticketSchema = new mongoose.Schema({
   },
   time_ended: {
     type: Date,
+    // validate: function (val) {
+    //   return val > this.createdAt;
+    // },
   },
 });
 
