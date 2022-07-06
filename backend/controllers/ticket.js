@@ -1,6 +1,7 @@
 const Ticket = require("../models/ticket");
 const APIFeatures = require("../utils/apiFeatures");
 const catchAsync = require("../utils/catchAsync");
+const AppError = require("../utils/appError");
 
 exports.createTicket = catchAsync(async (req, res, next) => {
   const newTicket = await Ticket.create(req.body);
@@ -33,6 +34,9 @@ exports.getAllTickets = catchAsync(async (req, res, next) => {
 
 exports.getTicket = catchAsync(async (req, res, next) => {
   const ticket = await Ticket.find({ _id: req.params.id });
+  if (!ticket.length) {
+    return next(new AppError("No ticket found with that ID", 404));
+  }
 
   res.status(200).json({
     status: "success",
@@ -47,6 +51,10 @@ exports.updateTicket = catchAsync(async (req, res, next) => {
     new: true,
   });
 
+  if (!ticket) {
+    return next(new AppError("No ticket found with that ID", 404));
+  }
+
   res.status(200).json({
     status: "status",
     data: {
@@ -56,7 +64,11 @@ exports.updateTicket = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteTicket = catchAsync(async (req, res, next) => {
-  await Ticket.findByIdAndDelete(req.params.id);
+  const ticket = await Ticket.findByIdAndDelete(req.params.id);
+
+  if (!ticket) {
+    return next(new AppError("No ticket found with that ID", 404));
+  }
   res.status(200).json({
     status: "success",
     data: null,
