@@ -1,8 +1,18 @@
-exports.getAllUsers = (req, res) => {
+const catchAsync = require("../utils/catchAsync");
+const User = require("../models/user");
+
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+  // EXECUTE QUERY
+  const users = await User.find();
+
+  // SEND RESPONSE
   res.status(200).json({
-    status: 200,
+    status: "success",
+    data: {
+      users,
+    },
   });
-};
+});
 
 exports.createUser = (req, res) => {
   res.status(500).json({
