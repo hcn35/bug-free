@@ -25,5 +25,15 @@
         ]
       }
     ]
+  },
+  {
+    "problem": "updateMe after route(`/:id`) doesn't work",
+    "section": "Section 10: Authentication, Authorization, and Security",
+    "lecture": "139",
+    "solutions": [
+      {
+        "description": "Move the endpoint to the top of the file"
+      }
+    ]
   }
 ]
