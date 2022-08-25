@@ -1,10 +1,10 @@
 import styles from "../styles/Layout.module.css";
-import Nav from "../components/Nav";
+import Sidebar from "../components/Sidebar";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Nav></Nav>
+      <Sidebar></Sidebar>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
       </div>
