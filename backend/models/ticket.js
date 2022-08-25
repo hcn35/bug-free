@@ -19,11 +19,18 @@ const ticketSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  time_ended: {
+  endedAt: {
     type: Date,
-    // validate: function (val) {
-    //   return val > this.createdAt;
-    // },
+  },
+  priority: {
+    type: String,
+    enum: ["Low", "Medium", "High"],
+    default: "Low",
+  },
+  status: {
+    type: String,
+    enum: ["TODO", "IN PROGRESS", "QUALITY ASSURANCE", "DONE"],
+    default: "TODO",
   },
 });
 
