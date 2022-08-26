@@ -1,0 +1,156 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  background: #11101d;
+  padding: 6px 14px;
+}
+
+.logoContent {
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+
+.logoIcon {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+.logoName {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebarMenu {
+  position: absolute;
+  color: #fff;
+  left: 90%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.navList {
+  padding: 0;
+}
+
+.navList li {
+  position: relative;
+  margin: 0 5px;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  list-style: none;
+}
+
+.navList li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding-left: 12px;
+  gap: 9px;
+}
+
+.navList li a:hover {
+  color: #11101d;
+  background: #fff;
+}
+
+.searchIcon {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  font-size: 35px;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searchInput {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.navListIcon {
+  height: 30px;
+  min-width: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.profileContent {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+}
+
+.profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: #1d1b31;
+}
+
+.profileDetails {
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.nameJob {
+  margin-left: 10px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.job {
+  font-size: 12px;
+}
+
+.logoutIcon {
+  color: #fff;
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  min-width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+}
