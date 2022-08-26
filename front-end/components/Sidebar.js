@@ -1,66 +1,40 @@
 import Image from "next/image";
 import myPhoto from "../photos/me.JPG";
 import {
-  BiMenu,
-  BiGridAlt,
-  BiSearchAlt2,
-  BiUser,
-  BiMessageDetail,
-  BiHeart,
-  BiCog,
   BiLogOut,
   BiBug,
+  BiTask,
+  BiGroup,
+  BiBarChartAlt2,
 } from "react-icons/bi";
 import sidebarStyles from "../styles/Sidebar.module.css";
 
 const Sidebar = () => {
   return (
     <div className={sidebarStyles.sidebar}>
-      <div className={sidebarStyles.logoContent}>
-        <div className={sidebarStyles.logo}>
-          <BiBug className={sidebarStyles.logoIcon} />
-          <div className={sidebarStyles.logoName}>BugFree</div>
-        </div>
-        <BiMenu className={sidebarStyles.sidebarMenu} />
-      </div>
+      <a href="#" className={sidebarStyles.logo}>
+        <BiBug className={sidebarStyles.logoIcon} />
+        <div className={sidebarStyles.logoName}>BugFree</div>
+      </a>
       <ul className={sidebarStyles.navList}>
         <li>
-          <BiSearchAlt2 className={sidebarStyles.searchIcon} />
-          <input
-            className={sidebarStyles.searchInput}
-            type="text"
-            placeholder="Search..."
-          ></input>
-        </li>
-        <li>
-          <a href="#">
-            <BiGridAlt className={sidebarStyles.navListIcon} />
+          <a href="/">
+            <BiBarChartAlt2 className={sidebarStyles.navListIcon} />
             <span className="link-name">Dashboard</span>
           </a>
         </li>
 
         <li>
           <a href="#">
-            <BiUser className={sidebarStyles.navListIcon} />
-            <span className="link-name">User</span>
+            <BiTask className={sidebarStyles.navListIcon} />
+            <span className="link-name">Tasks</span>
           </a>
         </li>
+
         <li>
           <a href="#">
-            <BiMessageDetail className={sidebarStyles.navListIcon} />
-            <span className="link-name">Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <BiHeart className={sidebarStyles.navListIcon} />
-            <span className="link-name">Saved</span>
-          </a>
-        </li>
-        <li>
-          <a href="/about">
-            <BiCog className={sidebarStyles.navListIcon} />
-            <span className="link-name">Settings</span>
+            <BiGroup className={sidebarStyles.navListIcon} />
+            <span className="link-name">Administration</span>
           </a>
         </li>
       </ul>

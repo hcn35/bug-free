@@ -4,43 +4,27 @@
   left: 0;
   height: 100%;
   width: 240px;
-  background: #11101d;
+  background: #eff6ff;
   padding: 6px 14px;
-}
-
-.logoContent {
-  margin-bottom: 20px;
 }
 
 .logo {
   display: flex;
-  color: #fff;
-  height: 50px;
+  color: #60a5fa;
+  height: 100px;
   width: 100%;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .logoIcon {
-  font-size: 28px;
-  margin-right: 5px;
+  font-size: 45px;
+  margin-right: 10px;
 }
 
 .logoName {
-  font-size: 20px;
+  font-size: 35px;
   font-weight: 400;
-}
-
-.sidebarMenu {
-  position: absolute;
-  color: #fff;
-  left: 90%;
-  top: 6px;
-  font-size: 20px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  line-height: 50px;
-  transform: translateX(-50%);
 }
 
 .navList {
@@ -57,7 +41,7 @@
 }
 
 .navList li a {
-  color: #fff;
+  color: #1e3a8a;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -68,33 +52,8 @@
 }
 
 .navList li a:hover {
-  color: #11101d;
-  background: #fff;
-}
-
-.searchIcon {
-  position: absolute;
-  z-index: 99;
-  color: #fff;
-  font-size: 35px;
-  left: 9px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.searchInput {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 12px;
-  outline: none;
-  border: none;
-  background: #1d1b31;
-  padding-left: 50px;
-  font-size: 18px;
-  color: #fff;
+  color: #eff6ff;
+  background: #60a5fa;
 }
 
 .navListIcon {
@@ -109,14 +68,14 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  color: #fff;
+  color: #1e3a8a;
 }
 
 .profile {
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background: #1d1b31;
+  background: #e2f0ff;
 }
 
 .profileDetails {
@@ -145,7 +104,7 @@
 }
 
 .logoutIcon {
-  color: #fff;
+  color: #1e3a8a;
   position: absolute;
   left: 90%;
   top: 50%;
