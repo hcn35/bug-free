@@ -1,11 +1,14 @@
-const Card = () => {
-  return (
-    <div class="card" style={{ width: "18rem" }}>
-      <div class="card-body">
-        <h5 class="card-title">Hello</h5>
-      </div>
-    </div>
-  );
-};
+import Card from "react-bootstrap/Card";
 
-export default Card;
+function DashboardCard(props) {
+  return (
+    <Card className="text-left mr-3" style={{ width: "350px" }}>
+      <Card.Header>{props.title}</Card.Header>
+      <Card.Body>
+        <Card.Text>Charts</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+export default DashboardCard;

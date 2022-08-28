@@ -3,11 +3,7 @@
   height: 100vh;
 }
 
-.rightSide {
-  flex-basis: calc(100% - 240px);
-}
-
 .content {
-  height: calc(100vh - 100px);
-  background: blue;
+  flex-basis: calc(100% - 240px);
+  background: #dbeafe;
 }
