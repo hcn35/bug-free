@@ -18,7 +18,7 @@ const Sidebar = () => {
       </a>
       <ul className={sidebarStyles.navList}>
         <li>
-          <a href="/">
+          <a href="/about">
             <BiBarChartAlt2 className={sidebarStyles.navListIcon} />
             <span className="link-name">Dashboard</span>
           </a>
@@ -39,22 +39,18 @@ const Sidebar = () => {
         </li>
       </ul>
       <div className={sidebarStyles.profileContent}>
-        <div className={sidebarStyles.profile}>
-          <div className={sidebarStyles.profileDetails}>
-            <Image
-              className={sidebarStyles.profileImage}
-              src={myPhoto}
-              alt="photo"
-              width="45px"
-              height="45px"
-            />
-            <div className={sidebarStyles.nameJob}>
-              <div className={sidebarStyles.name}>Hiep Nguyen</div>
-              <div className={sidebarStyles.job}>Software Engineer</div>
-            </div>
-          </div>
-          <BiLogOut className={sidebarStyles.logoutIcon} />
+        <Image
+          className={sidebarStyles.profileImage}
+          src={myPhoto}
+          alt="photo"
+          width="45px"
+          height="45px"
+        />
+        <div className={sidebarStyles.nameJob}>
+          <div className={sidebarStyles.name}>Hiep Nguyen</div>
+          <div className={sidebarStyles.job}>Software Engineer</div>
         </div>
+        <BiLogOut className={sidebarStyles.logoutIcon} />
       </div>
     </div>
   );

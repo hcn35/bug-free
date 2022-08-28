@@ -1,4 +1,4 @@
-.sidebar {
+/* .sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -112,4 +112,73 @@
   height: 30px;
   transform: translate(-50%, -50%);
   border-radius: 12px;
+} */
+
+.sidebar {
+  position: relative;
+  flex-basis: 240px;
+  background: #eff6ff;
+  padding: 6px 14px;
+}
+
+.logo {
+  display: flex;
+  color: #60a5fa;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logoIcon {
+  font-size: 45px;
+  margin-right: 10px;
+}
+
+.logoName {
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.navList {
+  padding: 0;
+}
+
+.navList li {
+  height: 50px;
+  line-height: 50px;
+  list-style: none;
+}
+
+.navList li a {
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding-left: 12px;
+  gap: 9px;
+}
+
+.navList li a:hover {
+  color: #eff6ff;
+  background: #60a5fa;
+}
+
+.navListIcon {
+  height: 30px;
+  min-width: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.profileContent {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: #1e3a8a;
 }

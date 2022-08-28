@@ -1,0 +1,11 @@
+/* .container {
+  position: absolute;
+  height: 20%;
+  width: calc(100% - 240px);
+  left: 240px;
+} */
+
+.container {
+  height: 100px;
+  background: pink;
+}
