@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 
 function DashboardCard(props) {
   return (
-    <Card className="text-left mr-3" style={{ width: "350px" }}>
+    <Card className="text-left">
       <Card.Header>{props.title}</Card.Header>
       <Card.Body>
         <Card.Text>Charts</Card.Text>

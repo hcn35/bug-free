@@ -20,21 +20,21 @@ const Sidebar = () => {
         <li>
           <a href="/dashboard">
             <BiBarChartAlt2 className={sidebarStyles.navListIcon} />
-            <span className="link-name">Dashboard</span>
+            <span className={sidebarStyles.pageName}>Dashboard</span>
           </a>
         </li>
 
         <li>
           <a href="/tasks">
             <BiTask className={sidebarStyles.navListIcon} />
-            <span className="link-name">Tasks</span>
+            <span className={sidebarStyles.pageName}>Tasks</span>
           </a>
         </li>
 
         <li>
           <a href="/administration">
             <BiGroup className={sidebarStyles.navListIcon} />
-            <span className="link-name">Administration</span>
+            <span className={sidebarStyles.pageName}>Administration</span>
           </a>
         </li>
       </ul>
