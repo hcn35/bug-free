@@ -1,119 +1,3 @@
-/* .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 240px;
-  background: #eff6ff;
-  padding: 6px 14px;
-}
-
-.logo {
-  display: flex;
-  color: #60a5fa;
-  height: 100px;
-  width: 100%;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.logoIcon {
-  font-size: 45px;
-  margin-right: 10px;
-}
-
-.logoName {
-  font-size: 35px;
-  font-weight: 400;
-}
-
-.navList {
-  padding: 0;
-}
-
-.navList li {
-  position: relative;
-  margin: 0 5px;
-  height: 50px;
-  line-height: 50px;
-  width: 100%;
-  list-style: none;
-}
-
-.navList li a {
-  color: #1e3a8a;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border-radius: 12px;
-  padding-left: 12px;
-  gap: 9px;
-}
-
-.navList li a:hover {
-  color: #eff6ff;
-  background: #60a5fa;
-}
-
-.navListIcon {
-  height: 30px;
-  min-width: 30px;
-  line-height: 30px;
-  text-align: center;
-}
-
-.profileContent {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: #1e3a8a;
-}
-
-.profile {
-  position: relative;
-  padding: 10px 6px;
-  height: 60px;
-  background: #e2f0ff;
-}
-
-.profileDetails {
-  display: flex;
-  align-items: center;
-}
-
-.profileImage {
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.nameJob {
-  margin-left: 10px;
-}
-
-.name {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.job {
-  font-size: 12px;
-}
-
-.logoutIcon {
-  color: #1e3a8a;
-  position: absolute;
-  left: 90%;
-  top: 50%;
-  min-width: 30px;
-  height: 30px;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-} */
-
 .sidebar {
   position: relative;
   flex-basis: 240px;
@@ -130,6 +14,14 @@
   margin-bottom: 20px;
 }
 
+.logo:link,
+.logo:visited,
+.logo:hover,
+.logo:active {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
 .logoIcon {
   font-size: 45px;
   margin-right: 10px;
@@ -175,10 +67,39 @@
 
 .profileContent {
   display: flex;
+  align-items: center;
+  gap: 30px;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 60px;
   color: #1e3a8a;
+}
+
+.profileContentDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileImage {
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.job {
+  font-size: 12px;
+}
+
+.logoutIcon {
+  color: #1e3a8a;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 12px;
 }

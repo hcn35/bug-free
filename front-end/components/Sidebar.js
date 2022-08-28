@@ -39,16 +39,18 @@ const Sidebar = () => {
         </li>
       </ul>
       <div className={sidebarStyles.profileContent}>
-        <Image
-          className={sidebarStyles.profileImage}
-          src={myPhoto}
-          alt="photo"
-          width="45px"
-          height="45px"
-        />
-        <div className={sidebarStyles.nameJob}>
-          <div className={sidebarStyles.name}>Hiep Nguyen</div>
-          <div className={sidebarStyles.job}>Software Engineer</div>
+        <div className={sidebarStyles.profileContentDetails}>
+          <Image
+            className={sidebarStyles.profileImage}
+            src={myPhoto}
+            alt="photo"
+            width="45px"
+            height="45px"
+          />
+          <div className={sidebarStyles.nameJob}>
+            <div className={sidebarStyles.name}>Hiep Nguyen</div>
+            <div className={sidebarStyles.job}>Software Engineer</div>
+          </div>
         </div>
         <BiLogOut className={sidebarStyles.logoutIcon} />
       </div>
