@@ -2,6 +2,9 @@ import Header from "../components/Header";
 import BasicTable from "../components/Table";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import LineChart from "../components/LineChart";
+import DashboardCard from "../components/Card";
+import dashboardStyles from "../styles/Dashboard.module.css";
+import { BiDownArrowAlt } from "react-icons/bi";
 
 const dashboard = () => {
   // Tickets (%), Time per Ticket, Progress, Feature
@@ -46,24 +49,26 @@ const dashboard = () => {
         <Row>
           {cardTitles.map((cardTitle) => (
             <Col mg={4}>
-              <Card className="mb-3 shadow w-100">
-                <Card.Body>
-                  <div className="cardContainer">
-                    <div>
-                      <div className="cardTitle">{cardTitle}</div>
-                      <div className="taskCount">130</div>
-                      <div className="comparison">
-                        <div className="percent">1.3</div>
-                        <div className="directionIcon"></div>
-                        <div>than last month</div>
+              <DashboardCard options="mb-3 shadow w-100">
+                <div className={dashboardStyles.cardContainer}>
+                  <div>
+                    <div className={dashboardStyles.cardTitle}>{cardTitle}</div>
+                    <div className={dashboardStyles.taskCount}>130</div>
+                    <div className={dashboardStyles.comparison}>
+                      <div className={dashboardStyles.percent}>1.3%</div>
+                      <div className={dashboardStyles.directionIcon}>
+                        <BiDownArrowAlt />
+                      </div>
+                      <div className={dashboardStyles.cardText}>
+                        than last month
                       </div>
                     </div>
-                    <div>
-                      <LineChart data={data} options={smallCardOptions} />
-                    </div>
                   </div>
-                </Card.Body>
-              </Card>
+                  <div className={dashboardStyles.cardChart}>
+                    <LineChart data={data} options={smallCardOptions} />
+                  </div>
+                </div>
+              </DashboardCard>
             </Col>
           ))}
         </Row>

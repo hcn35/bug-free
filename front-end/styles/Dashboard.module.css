@@ -1,0 +1,44 @@
+.cardContainer {
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.taskCount {
+  font-size: 36px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.comparison {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.percent {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f90d0d;
+}
+
+.directionIcon {
+  font-size: 20px;
+  color: #f90d0d;
+}
+
+.cardText {
+  font-size: 16px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.cardChart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
