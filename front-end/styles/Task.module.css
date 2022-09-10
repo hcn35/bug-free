@@ -1,0 +1,20 @@
+.taskContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tableHeader > p {
+  margin: 0;
+}
+
+.taskTable {
+  width: 95%;
+  box-shadow: 0 0 15px -5px;
+  padding: 20px;
+}
