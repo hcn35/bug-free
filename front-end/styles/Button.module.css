@@ -1,0 +1,16 @@
+.btn {
+  background-color: #334155 !important;
+  color: #f1f5f9;
+  border: none;
+}
+
+.btn:hover,
+.btn:active,
+.btn:visited {
+  background-color: #475569 !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

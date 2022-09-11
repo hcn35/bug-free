@@ -1,0 +1,51 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0;
+}
+
+.pageLink {
+  border-radius: 9px;
+}
+
+.pageLink:link,
+.pageLink:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 10px;
+  border: 1px solid;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.pageLink:hover,
+.pageLink:active {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+
+.selectedPageLink {
+  border-radius: 9px;
+}
+
+.selectedPageLink:link,
+.selectedPageLink:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #334155;
+  color: #f1f5f9;
+  padding: 10px;
+  border: 1px solid;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.selectedPageLink:hover,
+.selectedPageLink:active {
+  background-color: #f1f5f9;
+  color: #334155;
+}

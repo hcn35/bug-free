@@ -1,10 +1,10 @@
 import Table from "react-bootstrap/Table";
 import tableStyles from "../styles/Table.module.css";
 
-function BasicTable() {
+function BasicTable({ tasks }) {
   return (
     <Table className={tableStyles.tableContainer}>
-      <thead>
+      <thead className={tableStyles.tableHeader}>
         <tr>
           <th>Project</th>
           <th>Task</th>
@@ -13,21 +13,16 @@ function BasicTable() {
           <th>Due</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Bug Tracker</td>
-          <td>Create Schema</td>
-          <td>Resolved</td>
-          <td>High</td>
-          <td>10 days ago</td>
-        </tr>
-        <tr>
-          <td>Bug Tracker</td>
-          <td>Create Schema</td>
-          <td>Resolved</td>
-          <td>High</td>
-          <td>10 days ago</td>
-        </tr>
+      <tbody className={tableStyles.tableBody}>
+        {tasks.map((row) => (
+          <tr>
+            <td>{row.project}</td>
+            <td>{row.task}</td>
+            <td>{row.status}</td>
+            <td>{row.priority}</td>
+            <td>{row.due}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
