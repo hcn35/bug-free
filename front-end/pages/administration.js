@@ -10,6 +10,11 @@ import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
+import paginationFactory, {
+  PaginationProvider,
+  PaginationTotalStandalone,
+  PaginationListStandalone,
+} from "react-bootstrap-table2-paginator";
 
 const administration = () => {
   const { SearchBar } = Search;
@@ -42,7 +47,72 @@ const administration = () => {
     { id: 2, name: "Jeffrey" },
     { id: 3, name: "Alice" },
     { id: 4, name: "Alice" },
+    { id: 5, name: "George" },
+    { id: 6, name: "Jeffrey" },
+    { id: 7, name: "Alice" },
+    { id: 8, name: "Alice" },
+    { id: 9, name: "George" },
+    { id: 10, name: "Jeffrey" },
+    { id: 11, name: "Alice" },
+    { id: 12, name: "Alice" },
+    { id: 13, name: "George" },
+    { id: 14, name: "Jeffrey" },
+    { id: 15, name: "Alice" },
+    { id: 16, name: "Alice" },
+    { id: 17, name: "George" },
+    { id: 18, name: "Jeffrey" },
+    { id: 19, name: "Alice" },
+    { id: 20, name: "Alice" },
+    { id: 21, name: "George" },
+    { id: 22, name: "Jeffrey" },
+    { id: 23, name: "Alice" },
+    { id: 24, name: "Alice" },
+    { id: 25, name: "George" },
+    { id: 26, name: "Jeffrey" },
+    { id: 27, name: "Alice" },
+    { id: 28, name: "Alice" },
+    { id: 29, name: "George" },
+    { id: 30, name: "Jeffrey" },
+    { id: 31, name: "Alice" },
+    { id: 32, name: "Alice" },
+    { id: 33, name: "George" },
+    { id: 34, name: "Jeffrey" },
+    { id: 35, name: "Alice" },
+    { id: 36, name: "Alice" },
+    { id: 37, name: "George" },
+    { id: 38, name: "Jeffrey" },
+    { id: 39, name: "Alice" },
+    { id: 40, name: "Alice" },
+    { id: 41, name: "George" },
+    { id: 42, name: "Jeffrey" },
+    { id: 43, name: "Alice" },
+    { id: 44, name: "Alice" },
+    { id: 45, name: "George" },
+    { id: 46, name: "Jeffrey" },
+    { id: 47, name: "Alice" },
+    { id: 48, name: "Alice" },
+    { id: 49, name: "George" },
+    { id: 50, name: "Jeffrey" },
+    { id: 51, name: "Alice" },
+    { id: 52, name: "Alice" },
+    { id: 53, name: "George" },
+    { id: 54, name: "Jeffrey" },
+    { id: 55, name: "Alice" },
+    { id: 56, name: "Alice" },
+    { id: 57, name: "George" },
+    { id: 58, name: "Jeffrey" },
+    { id: 59, name: "Alice" },
+    { id: 60, name: "Alice" },
+    { id: 61, name: "George" },
+    { id: 62, name: "Jeffrey" },
+    { id: 63, name: "Alice" },
+    { id: 64, name: "Alice" },
   ];
+
+  const options = {
+    custom: true,
+    totalSize: products.length,
+  };
 
   const selectRow = {
     mode: "radio",
@@ -83,7 +153,11 @@ const administration = () => {
                   label="First name"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="First name" />
+                  <Form.Control
+                    type="text"
+                    placeholder="First name"
+                    value="Hiep"
+                  />
                 </FloatingLabel>
               </Col>
               <Col>
@@ -146,34 +220,47 @@ const administration = () => {
         <Row>
           <Col mg={6}>
             <DashboardCard>
-              <ToolkitProvider
-                keyField="id"
-                data={products}
-                columns={columns}
-                search
-              >
-                {(props) => {
-                  console.log(props);
-                  return (
-                    <div>
-                      <div className={administrationStyles.header}>
-                        <div className={dashboardStyles.secondaryCardTitle}>
-                          Users
-                        </div>
-                        <MySearch {...props.searchProps} />
-                      </div>
-                      <BootstrapTable
-                        {...props.baseProps}
-                        bordered={false}
-                        hover
-                        condensed
-                        noDataIndication="Table is Empty"
-                        rowEvents={rowEvents}
-                      />
+              <PaginationProvider pagination={paginationFactory(options)}>
+                {({ paginationProps, paginationTableProps }) => (
+                  <div>
+                    <ToolkitProvider
+                      keyField="id"
+                      data={products}
+                      columns={columns}
+                      search
+                    >
+                      {(props) => {
+                        console.log(props);
+                        return (
+                          <div>
+                            <div className={administrationStyles.header}>
+                              <div
+                                className={dashboardStyles.secondaryCardTitle}
+                              >
+                                Users
+                              </div>
+                              <MySearch {...props.searchProps} />
+                            </div>
+                            <BootstrapTable
+                              {...props.baseProps}
+                              bordered={false}
+                              hover
+                              condensed
+                              noDataIndication="Table is Empty"
+                              rowEvents={rowEvents}
+                              {...paginationTableProps}
+                            />
+                          </div>
+                        );
+                      }}
+                    </ToolkitProvider>
+                    <div className={administrationStyles.pagination}>
+                      <PaginationTotalStandalone {...paginationProps} />
+                      <PaginationListStandalone {...paginationProps} />
                     </div>
-                  );
-                }}
-              </ToolkitProvider>
+                  </div>
+                )}
+              </PaginationProvider>
             </DashboardCard>
           </Col>
           <Col mg={6}>

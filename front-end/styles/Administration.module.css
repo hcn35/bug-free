@@ -14,3 +14,8 @@
   color: #94a3b8;
   margin-bottom: 10px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
