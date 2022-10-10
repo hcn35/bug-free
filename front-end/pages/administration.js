@@ -6,19 +6,24 @@ import DashboardCard from "../components/Card";
 import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import { useState } from "react";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
 const administration = () => {
   const { SearchBar } = Search;
   const [editUserCard, setEditUserCard] = useState(<div>EDIT</div>);
-
+  const headerSortingStyle = { backgroundColor: "#f1f5f9" };
   const columns = [
     {
       dataField: "id",
       text: "User ID",
+      sort: true,
+      headerSortingStyle,
     },
     {
       dataField: "name",
       text: "User Name",
+      sort: true,
+      headerSortingStyle,
     },
   ];
 
