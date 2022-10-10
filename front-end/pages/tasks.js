@@ -201,7 +201,7 @@ const tasks = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const tasksPerPage = 13;
+  const tasksPerPage = 11;
   const [displayedTasks, setDisplayedTasks] = useState(
     fakeData.slice(0, tasksPerPage)
   );
