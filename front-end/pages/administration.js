@@ -7,10 +7,20 @@ import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import { useState } from "react";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Button from "react-bootstrap/Button";
 
 const administration = () => {
   const { SearchBar } = Search;
-  const [editUserCard, setEditUserCard] = useState(<div>EDIT</div>);
+  const [editUserCard, setEditUserCard] = useState(
+    <>
+      <div className={administrationStyles.editUserInformation}>
+        Edit User Information
+      </div>
+      <div>No user selected</div>
+    </>
+  );
   const headerSortingStyle = { backgroundColor: "#f1f5f9" };
   const columns = [
     {
@@ -60,7 +70,72 @@ const administration = () => {
 
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
-      setEditUserCard(<div>{rowIndex}</div>);
+      const userForm = (
+        <>
+          <div className={administrationStyles.editUserInformation}>
+            Edit User Information
+          </div>
+          <Form>
+            <Row>
+              <Col>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="First name"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" placeholder="First name" />
+                </FloatingLabel>
+              </Col>
+              <Col>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Last name"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" placeholder="Last name" />
+                </FloatingLabel>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Phone number"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" placeholder="Phone number" />
+                </FloatingLabel>
+              </Col>
+              <Col>
+                <Form.Select size="lg" aria-label="Default select example">
+                  <option>Select authorization role</option>
+                  <option value="developer">Developer</option>
+                  <option value="admin">Admin</option>
+                </Form.Select>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Email"
+                  className="mb-3"
+                >
+                  <Form.Control type="email" placeholder="Email" />
+                </FloatingLabel>
+              </Col>
+            </Row>
+            <div
+              className={administrationStyles.buttonGroup}
+              aria-label="Basic example"
+            >
+              <Button variant="primary">Submit</Button>{" "}
+              <Button variant="danger">Delete user</Button>
+            </div>
+          </Form>
+        </>
+      );
+      setEditUserCard(userForm);
     },
   };
 
