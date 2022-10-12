@@ -34,6 +34,7 @@ function MyVerticallyCenteredModal(props) {
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros.
         </p>
+        <p>{props.data}</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -44,6 +45,7 @@ function MyVerticallyCenteredModal(props) {
 
 const tasks = () => {
   const [modalShow, setModalShow] = useState(false);
+  const [data, setData] = useState(0);
   const MySearch = (props) => {
     let input;
     const handleChange = () => {
@@ -64,7 +66,10 @@ const tasks = () => {
   };
 
   const rowEvents = {
-    onClick: (e, row, rowIndex) => setModalShow(true),
+    onClick: (e, row, rowIndex) => {
+      setData(rowIndex);
+      setModalShow(true);
+    },
   };
 
   const headerSortingStyle = { backgroundColor: "#f1f5f9" };
@@ -355,6 +360,7 @@ const tasks = () => {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        data={data}
       />
     </>
   );
