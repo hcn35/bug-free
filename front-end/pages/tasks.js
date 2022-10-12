@@ -14,6 +14,34 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 const tasks = () => {
   const [modalShow, setModalShow] = useState(false);
   const MySearch = (props) => {
@@ -36,32 +64,7 @@ const tasks = () => {
   };
 
   const rowEvents = {
-    onClick: (e, row, rowIndex) => (
-      <Modal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => setModalShow(false)}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    ),
+    onClick: (e, row, rowIndex) => setModalShow(true),
   };
 
   const headerSortingStyle = { backgroundColor: "#f1f5f9" };
@@ -296,58 +299,64 @@ const tasks = () => {
   };
 
   return (
-    <div>
-      <Header title="Administration"></Header>
-      <Container>
-        <Row>
-          <Col mg={12}>
-            <DashboardCard>
-              <PaginationProvider pagination={paginationFactory(options)}>
-                {({ paginationProps, paginationTableProps }) => (
-                  <div>
-                    <ToolkitProvider
-                      keyField="id"
-                      data={products}
-                      columns={columns}
-                      search
-                    >
-                      {(props) => {
-                        console.log(props);
-                        return (
-                          <div>
-                            <div className={administrationStyles.header}>
-                              <div
-                                className={dashboardStyles.secondaryCardTitle}
-                              >
-                                Tasks
+    <>
+      <div>
+        <Header title="Administration"></Header>
+        <Container>
+          <Row>
+            <Col mg={12}>
+              <DashboardCard>
+                <PaginationProvider pagination={paginationFactory(options)}>
+                  {({ paginationProps, paginationTableProps }) => (
+                    <div>
+                      <ToolkitProvider
+                        keyField="id"
+                        data={products}
+                        columns={columns}
+                        search
+                      >
+                        {(props) => {
+                          console.log(props);
+                          return (
+                            <div>
+                              <div className={administrationStyles.header}>
+                                <div
+                                  className={dashboardStyles.secondaryCardTitle}
+                                >
+                                  Tasks
+                                </div>
+                                <MySearch {...props.searchProps} />
                               </div>
-                              <MySearch {...props.searchProps} />
+                              <BootstrapTable
+                                {...props.baseProps}
+                                bordered={false}
+                                hover
+                                condensed
+                                noDataIndication="Table is Empty"
+                                rowEvents={rowEvents}
+                                {...paginationTableProps}
+                              />
                             </div>
-                            <BootstrapTable
-                              {...props.baseProps}
-                              bordered={false}
-                              hover
-                              condensed
-                              noDataIndication="Table is Empty"
-                              rowEvents={rowEvents}
-                              {...paginationTableProps}
-                            />
-                          </div>
-                        );
-                      }}
-                    </ToolkitProvider>
-                    <div className={administrationStyles.pagination}>
-                      <PaginationTotalStandalone {...paginationProps} />
-                      <PaginationListStandalone {...paginationProps} />
+                          );
+                        }}
+                      </ToolkitProvider>
+                      <div className={administrationStyles.pagination}>
+                        <PaginationTotalStandalone {...paginationProps} />
+                        <PaginationListStandalone {...paginationProps} />
+                      </div>
                     </div>
-                  </div>
-                )}
-              </PaginationProvider>
-            </DashboardCard>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                  )}
+                </PaginationProvider>
+              </DashboardCard>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
   );
 };
 
