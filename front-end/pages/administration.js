@@ -5,7 +5,7 @@ import administrationStyles from "../styles/Administration.module.css";
 import DashboardCard from "../components/Card";
 import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -16,7 +16,8 @@ import paginationFactory, {
   PaginationListStandalone,
 } from "react-bootstrap-table2-paginator";
 
-const administration = () => {
+const administration = ({ data }) => {
+  console.log(data);
   const { SearchBar } = Search;
   const [editUserCard, setEditUserCard] = useState(
     <>
@@ -35,8 +36,14 @@ const administration = () => {
       headerSortingStyle,
     },
     {
-      dataField: "name",
-      text: "User Name",
+      dataField: "firstName",
+      text: "First Name",
+      sort: true,
+      headerSortingStyle,
+    },
+    {
+      dataField: "lastName",
+      text: "Last Name",
       sort: true,
       headerSortingStyle,
     },
@@ -109,9 +116,23 @@ const administration = () => {
     { id: 64, name: "Alice" },
   ];
 
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    const users = data.data.users;
+    const newUsers = users.map((user) => ({
+      id: user.email.slice(0, user.email.indexOf("@")),
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      role: user.role,
+    }));
+    setUserData(newUsers);
+  }, [data]);
+
   const options = {
     custom: true,
-    totalSize: products.length,
+    totalSize: userData.length,
   };
 
   const selectRow = {
@@ -156,7 +177,10 @@ const administration = () => {
                   <Form.Control
                     type="text"
                     placeholder="First name"
-                    value="Hiep"
+                    defaultValue={row.firstName}
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                    }}
                   />
                 </FloatingLabel>
               </Col>
@@ -166,7 +190,14 @@ const administration = () => {
                   label="Last name"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Last name" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Last name"
+                    defaultValue={row.lastName}
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                    }}
+                  />
                 </FloatingLabel>
               </Col>
             </Row>
@@ -177,15 +208,37 @@ const administration = () => {
                   label="Phone number"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Phone number" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Phone number"
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                    }}
+                  />
                 </FloatingLabel>
               </Col>
               <Col>
-                <Form.Select size="lg" aria-label="Default select example">
-                  <option>Select authorization role</option>
-                  <option value="developer">Developer</option>
-                  <option value="admin">Admin</option>
-                </Form.Select>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Role"
+                  className="mb-3"
+                >
+                  <Form.Select
+                    aria-label="Default select example"
+                    className="mb-3"
+                  >
+                    <option key={row.role} value={row.role}>
+                      {row.role}
+                    </option>
+                    {["Lead Developer", "Developer"]
+                      .filter((role) => role !== row.role)
+                      .map((role) => (
+                        <option key={role} value={role}>
+                          {role}
+                        </option>
+                      ))}
+                  </Form.Select>
+                </FloatingLabel>
               </Col>
             </Row>
             <Row>
@@ -195,7 +248,14 @@ const administration = () => {
                   label="Email"
                   className="mb-3"
                 >
-                  <Form.Control type="email" placeholder="Email" />
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    defaultValue={row.email}
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                    }}
+                  />
                 </FloatingLabel>
               </Col>
             </Row>
@@ -225,7 +285,7 @@ const administration = () => {
                   <div>
                     <ToolkitProvider
                       keyField="id"
-                      data={products}
+                      data={userData}
                       columns={columns}
                       search
                     >
@@ -270,6 +330,14 @@ const administration = () => {
       </Container>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:8530/api/v1/users");
+  const data = await res.json();
+  return {
+    props: { data },
+  };
 };
 
 export default administration;
