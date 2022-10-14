@@ -1,9 +1,19 @@
+/* sidebarColor: #3b82f6
+backgroundColor: #e9effd 
+pageTitleColor: #4c4c4c
+cardTitleColor: #70747d
+secondaryCardTitleColor: #a0a3a9
+darkColor: #07142f
+warningColor: #f90d0d
+profileColor: #3575dd
+*/
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Roboto";
-  color: #3b82f6;
+  color: #4c4c4c;
 }
 
 * {

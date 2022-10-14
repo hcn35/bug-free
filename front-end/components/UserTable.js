@@ -10,7 +10,7 @@ import ToolkitProvider from "react-bootstrap-table2-toolkit";
 import BootstrapTable from "react-bootstrap-table-next";
 
 const UserTable = ({ userData, currentUserChanger }) => {
-  const headerSortingStyle = { backgroundColor: "#ebf3fe" };
+  const headerSortingStyle = { backgroundColor: "#e9effd" };
   const columns = [
     {
       dataField: "id",
@@ -49,7 +49,7 @@ const UserTable = ({ userData, currentUserChanger }) => {
           type="text"
           onChange={handleChange}
           placeholder="Search"
-          style={{ backgroundColor: "#ebf3fe" }}
+          style={{ backgroundColor: "#e9effd" }}
         />
       </div>
     );
@@ -81,11 +81,12 @@ const UserTable = ({ userData, currentUserChanger }) => {
                   <BootstrapTable
                     {...props.baseProps}
                     bordered={false}
-                    hover
                     condensed
                     noDataIndication="Table is Empty"
                     rowEvents={rowEvents}
                     {...paginationTableProps}
+                    classes={dashboardStyles.mytableHover}
+                    rowClasses={dashboardStyles.mytableHoverRow}
                   />
                 </div>
               );

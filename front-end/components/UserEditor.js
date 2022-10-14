@@ -108,7 +108,7 @@ const UserEditor = ({ props }) => {
       <div className={administrationStyles.editUserInformation}>
         Edit User Information
       </div>
-      <div>There is not data to display</div>
+      <div>No user is selected!</div>
     </>
   );
 };

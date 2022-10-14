@@ -14,6 +14,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -25,45 +27,201 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Modify Task
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p>{props.data}</p>
+        <Form>
+          <Row>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Project"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="Project"
+                  defaultValue="New Project"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Task Name"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="Task Name"
+                  defaultValue="New Task"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Status"
+                className="mb-3"
+              >
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-3"
+                >
+                  {["To Do", "In Progress", "Done", "Overdue"].map((status) => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Priority"
+                className="mb-3"
+              >
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-3"
+                >
+                  {["Low", "Medium", "High"].map((priority) => (
+                    <option key={priority} value={priority}>
+                      {priority}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Due"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="date"
+                  placeholder="Due"
+                  // defaultValue="New Task"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+        </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Save</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function CreateTaskModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">New Task</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Row>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Project"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="Project"
+                  defaultValue="New Project"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Task Name"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="Task Name"
+                  defaultValue="New Task"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Status"
+                className="mb-3"
+              >
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-3"
+                >
+                  {["To Do", "In Progress", "Done", "Overdue"].map((status) => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Priority"
+                className="mb-3"
+              >
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-3"
+                >
+                  {["Low", "Medium", "High"].map((priority) => (
+                    <option key={priority} value={priority}>
+                      {priority}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+            </Col>
+            <Col>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Due"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="date"
+                  placeholder="Due"
+                  // defaultValue="New Task"
+                  // onChange={(e) => {}}
+                />
+              </FloatingLabel>
+            </Col>
+          </Row>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Save</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -71,6 +229,7 @@ function MyVerticallyCenteredModal(props) {
 
 const tasks = () => {
   const [modalShow, setModalShow] = useState(false);
+  const [newTaskModalShow, setNewTaskModalShow] = useState(false);
   const [data, setData] = useState(0);
 
   const rowEvents = {
@@ -80,7 +239,7 @@ const tasks = () => {
     },
   };
 
-  const headerSortingStyle = { backgroundColor: "#ebf3fe" };
+  const headerSortingStyle = { backgroundColor: "#e9effd" };
   const columns = [
     {
       dataField: "project",
@@ -311,6 +470,8 @@ const tasks = () => {
     totalSize: products.length,
   };
 
+  const handleClick = () => setNewTaskModalShow(true);
+
   return (
     <>
       <div>
@@ -338,7 +499,7 @@ const tasks = () => {
                                 >
                                   Tasks
                                 </div>
-                                <Button variant="primary">
+                                <Button variant="primary" onClick={handleClick}>
                                   <div
                                     className={dashboardStyles.newTaskContent}
                                   >
@@ -349,11 +510,12 @@ const tasks = () => {
                               <BootstrapTable
                                 {...props.baseProps}
                                 bordered={false}
-                                hover
                                 condensed
                                 noDataIndication="Table is Empty"
                                 rowEvents={rowEvents}
                                 {...paginationTableProps}
+                                classes={dashboardStyles.mytableHover}
+                                rowClasses={dashboardStyles.mytableHoverRow}
                               />
                             </div>
                           );
@@ -374,6 +536,11 @@ const tasks = () => {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        data={data}
+      />
+      <CreateTaskModal
+        show={newTaskModalShow}
+        onHide={() => setNewTaskModalShow(false)}
         data={data}
       />
     </>

@@ -7,7 +7,7 @@
 
 .logo {
   display: flex;
-  color: #ebf3fe;
+  color: #e9effd;
   height: 100px;
   width: 100%;
   align-items: center;
@@ -18,7 +18,7 @@
 .logo:visited,
 .logo:hover,
 .logo:active {
-  color: #ebf3fe;
+  color: #e9effd;
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .navList li a {
-  color: #ebf3fe;
+  color: #e9effd;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -55,7 +55,7 @@
 
 .navList li a:hover {
   color: #3b82f6;
-  background: #ebf3fe;
+  background: #e9effd;
 }
 
 .pageName {
@@ -78,7 +78,7 @@
   bottom: 0;
   width: 100%;
   height: 60px;
-  color: #ebf3fe;
+  color: #e9effd;
   background: #3575dd;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .logoutIcon {
-  color: #ebf3fe;
+  color: #e9effd;
   min-width: 30px;
   height: 30px;
   border-radius: 12px;

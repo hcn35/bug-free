@@ -5,13 +5,13 @@
 .secondaryCardTitle {
   font-size: 18px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a0a3a9;
 }
 
 .taskCount {
   font-size: 36px;
   font-weight: 500;
-  color: #0f172a;
+  color: #07142f;
 }
 
 .comparison {
@@ -34,7 +34,7 @@
 .cardText {
   font-size: 16px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a0a3a9;
 }
 
 .cardChart {
@@ -46,7 +46,7 @@
 .mainCardTitle {
   font-size: 18px;
   font-weight: 500;
-  color: #3b82f6;
+  color: #4c4c4c;
 }
 
 .progressChart {
@@ -58,4 +58,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.mytableHover > tbody > tr.mytableHoverRow:hover {
+  background-color: #e9effd;
+  cursor: pointer;
 }
