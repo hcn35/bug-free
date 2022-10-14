@@ -85,8 +85,7 @@ const UserTable = ({ userData, currentUserChanger }) => {
                     noDataIndication="Table is Empty"
                     rowEvents={rowEvents}
                     {...paginationTableProps}
-                    classes={dashboardStyles.mytableHover}
-                    rowClasses={dashboardStyles.mytableHoverRow}
+                    classes={dashboardStyles.tableHover}
                   />
                 </div>
               );

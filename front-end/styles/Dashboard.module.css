@@ -60,7 +60,13 @@
   gap: 5px;
 }
 
-.mytableHover > tbody > tr.mytableHoverRow:hover {
+.tableHover tbody tr td,
+.tableHover tbody tr th {
+  transition: all 0.3s ease;
+}
+
+.tableHover tbody tr:hover td,
+.tableHover tbody tr:hover th {
   background-color: #e9effd;
   cursor: pointer;
 }
