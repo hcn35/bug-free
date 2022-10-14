@@ -14,7 +14,7 @@ const Sidebar = () => {
     <div className={sidebarStyles.sidebar}>
       <a href="#" className={sidebarStyles.logo}>
         <BiBug className={sidebarStyles.logoIcon} />
-        <div className={sidebarStyles.logoName}>BugFree</div>
+        <div className={sidebarStyles.logoName}>BugTracker</div>
       </a>
       <ul className={sidebarStyles.navList}>
         <li>

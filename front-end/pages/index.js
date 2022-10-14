@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>BugFree</title>
+        <title>BugTracker</title>
         <meta name="keywords" content="tracking bugs in your app" />
       </Head>
     </div>
