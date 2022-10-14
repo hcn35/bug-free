@@ -84,7 +84,7 @@ const tasks = () => {
           type="text"
           onChange={handleChange}
           placeholder="Search"
-          style={{ backgroundColor: "#f1f5f9" }}
+          style={{ backgroundColor: "#ebf3fe" }}
         />
       </div>
     );
@@ -97,7 +97,7 @@ const tasks = () => {
     },
   };
 
-  const headerSortingStyle = { backgroundColor: "#f1f5f9" };
+  const headerSortingStyle = { backgroundColor: "#ebf3fe" };
   const columns = [
     {
       dataField: "project",

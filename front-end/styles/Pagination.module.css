@@ -14,8 +14,8 @@
 .pageLink:visited {
   display: inline-block;
   text-decoration: none;
-  background-color: #f1f5f9;
-  color: #334155;
+  background-color: #ebf3fe;
+  color: #3b82f6;
   padding: 10px;
   border: 1px solid;
   font-weight: 500;
@@ -24,8 +24,8 @@
 
 .pageLink:hover,
 .pageLink:active {
-  background-color: #334155;
-  color: #f1f5f9;
+  background-color: #3b82f6;
+  color: #ebf3fe;
 }
 
 .selectedPageLink {
@@ -36,8 +36,8 @@
 .selectedPageLink:visited {
   display: inline-block;
   text-decoration: none;
-  background-color: #334155;
-  color: #f1f5f9;
+  background-color: #3b82f6;
+  color: #ebf3fe;
   padding: 10px;
   border: 1px solid;
   font-weight: 500;
@@ -46,6 +46,6 @@
 
 .selectedPageLink:hover,
 .selectedPageLink:active {
-  background-color: #f1f5f9;
-  color: #334155;
+  background-color: #ebf3fe;
+  color: #3b82f6;
 }
