@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import dashboardStyles from "../styles/Dashboard.module.css";
 import { Container, Row, Col } from "react-bootstrap";
 import BootstrapTable from "react-bootstrap-table-next";
-import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
+import ToolkitProvider from "react-bootstrap-table2-toolkit";
 import DashboardCard from "../components/Card";
 import paginationFactory, {
   PaginationProvider,
@@ -13,6 +13,7 @@ import administrationStyles from "../styles/Administration.module.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -71,24 +72,6 @@ function MyVerticallyCenteredModal(props) {
 const tasks = () => {
   const [modalShow, setModalShow] = useState(false);
   const [data, setData] = useState(0);
-  const MySearch = (props) => {
-    let input;
-    const handleChange = () => {
-      props.onSearch(input.value);
-    };
-    return (
-      <div>
-        <input
-          className="form-control"
-          ref={(n) => (input = n)}
-          type="text"
-          onChange={handleChange}
-          placeholder="Search"
-          style={{ backgroundColor: "#ebf3fe" }}
-        />
-      </div>
-    );
-  };
 
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
@@ -355,7 +338,13 @@ const tasks = () => {
                                 >
                                   Tasks
                                 </div>
-                                <MySearch {...props.searchProps} />
+                                <Button variant="primary">
+                                  <div
+                                    className={dashboardStyles.newTaskContent}
+                                  >
+                                    <FaPlus /> <div>New Task</div>
+                                  </div>
+                                </Button>
                               </div>
                               <BootstrapTable
                                 {...props.baseProps}

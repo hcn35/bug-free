@@ -53,3 +53,9 @@
   display: flex;
   justify-content: center;
 }
+
+.newTaskContent {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
